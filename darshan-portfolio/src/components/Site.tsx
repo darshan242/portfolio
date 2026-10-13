@@ -260,7 +260,7 @@ function Site() {
               gap={36}
               logoHeight={58}
               fadeOut
-              fadeOutColor="#0c0c0e"
+              fadeOutColor="rgba(18, 8, 6, 0.28)"
               pauseOnHover
               ariaLabel="Technology stack"
             />
