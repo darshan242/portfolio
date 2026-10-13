@@ -21,7 +21,6 @@ import AnimatedContent from "./bits/AnimatedContent";
 import CountUp from "./bits/CountUp";
 import FoldText from "./bits/FoldText";
 import GradientText from "./bits/GradientText";
-import GradientWaves from "./bits/GradientWaves";
 import InfiniteSpiral from "./bits/InfiniteSpiral";
 import LogoLoop from "./bits/LogoLoop";
 import Magnet from "./bits/Magnet";
@@ -352,22 +351,18 @@ function Site() {
           </section>
 
           <section className="contact" id="contact">
-            <WhenNear className="contact__waves">
-              <GradientWaves
-                horizonColor="#140704"
-                waveColor="#ff5a1f"
-                crestColor="#ffd3b4"
-                speed={0.32}
-                amplitude={2.1}
-                detail="low"
-                brightness={0.9}
-                mouseInteraction={false}
-                grain
-              />
-            </WhenNear>
             <div className="contact__copy">
               <p className="kicker">Contact</p>
-              <h2>Get in touch.</h2>
+              <FoldText
+                className="contact__title"
+                text="Get in touch."
+                splitBy="word"
+                hinge="top"
+                trigger="scroll"
+                fontSize="clamp(2.2rem, 5vw, 3.6rem)"
+                fontWeight={800}
+                color="#f7f3ee"
+              />
               <p>
                 GitHub, LinkedIn, Instagram, and X are linked. WhatsApp and
                 email can be added later.

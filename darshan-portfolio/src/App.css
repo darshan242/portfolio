@@ -273,7 +273,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.8rem;
-  padding: 1rem 1.4rem 0;
+  padding: 1rem 0 0;
 }
 
 .project {
@@ -366,32 +366,19 @@
 }
 
 .contact {
-  position: relative;
-  min-height: 380px;
-  margin: 0.6rem 0.7rem 0.7rem;
-  overflow: hidden;
-  border-radius: 22px;
-}
-
-.contact__waves {
-  position: absolute;
-  inset: 0;
-  opacity: 0.42;
+  padding: 0.4rem 1.4rem 1.6rem;
 }
 
 .contact__copy {
-  position: relative;
-  z-index: 1;
   display: flex;
-  max-width: 28rem;
+  max-width: 34rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.8rem;
-  padding: 3.2rem 1.6rem;
 }
 
-.contact h2 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+.contact__title {
+  font-family: Syne, sans-serif;
 }
 
 .contact__copy p {
