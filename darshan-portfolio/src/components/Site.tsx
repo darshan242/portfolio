@@ -363,10 +363,7 @@ function Site() {
                 fontWeight={800}
                 color="#f7f3ee"
               />
-              <p>
-                GitHub, LinkedIn, Instagram, and X are linked. WhatsApp and
-                email can be added later.
-              </p>
+              <p>Let's connect and build something amazing together.</p>
               <Magnet padding={80} magnetStrength={2.6}>
                 <a
                   className="button"
@@ -392,7 +389,7 @@ function Site() {
             </div>
             <p className="footer__credit">
               <a href="https://icons8.com" target="_blank" rel="noreferrer">
-                Icons by Icons8
+                Built with ❤️ and lots of ☕
               </a>
             </p>
           </footer>

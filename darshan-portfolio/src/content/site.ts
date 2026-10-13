@@ -110,12 +110,12 @@ export type Social = {
 /** Paste profile URLs here. Blank entries stay visible and do not navigate. */
 export const socials: Social[] = [
   { name: "GitHub", href: "https://github.com/darshan242" },
-  { name: "WhatsApp", href: "" },
+  { name: "WhatsApp", href: "https://wa.me/918767037115" },
   { name: "Instagram", href: "https://instagram.com/darshan_m_242" },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/darshan-mardane-a6071b21a",
   },
   { name: "X", href: "https://x.com/DarshanMardane" },
-  { name: "Email", href: "" },
+  { name: "Email", href: "mailto:darshanmardane242@gmail.com" },
 ];
