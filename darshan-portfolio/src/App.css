@@ -205,6 +205,17 @@
   padding: 0.5rem 0 1.4rem;
 }
 
+.logoloop__list,
+.logoloop__item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.logoloop__item::marker {
+  content: none;
+}
+
 .stack .kicker,
 .about,
 .projects,
@@ -320,6 +331,14 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.earlier li {
+  list-style: none;
+}
+
+.earlier li::marker {
+  content: none;
 }
 
 .earlier a {

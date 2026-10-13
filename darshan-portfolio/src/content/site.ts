@@ -1,7 +1,7 @@
 export const profile = {
   name: "Darshan",
   fullName: "Darshan Mardane",
-  role: "Frontend React Developer",
+  role: "Full Stack Developer",
   eyebrow: "Hey, I’m a",
   summary:
     "I build React interfaces. 2.3 years as an SDE, with a BE in Information Technology.",
@@ -39,7 +39,7 @@ export type Project = {
   name: string;
   summary: string;
   stack: string;
-  repo: string;
+  repo?: string;
   live?: string;
 };
 
@@ -68,10 +68,10 @@ export const projects: Project[] = [
     live: "https://tenzies-game-one-khaki.vercel.app",
   },
   {
-    name: "Wedding invite",
-    summary: "An HTML invite page.",
-    stack: "HTML",
-    repo: "https://github.com/darshan242/saloni-sagar-wedding-invite",
+    name: "Throughline",
+    summary:
+      "An MCP that stores decisions across sessions and uses that context to guide the next one.",
+    stack: "MCP",
   },
 ];
 

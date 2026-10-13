@@ -7,6 +7,10 @@ import pythonIcon from "../assets/stack/python.png";
 import javaIcon from "../assets/stack/java.png";
 import gitIcon from "../assets/stack/git.png";
 import githubIcon from "../assets/stack/github.png";
+import nodeIcon from "../assets/stack/node.png";
+import mongodbIcon from "../assets/stack/mongodb.png";
+import expressIcon from "../assets/stack/express.png";
+import wordpressIcon from "../assets/stack/wordpress.png";
 import chefShot from "../assets/projects/claud-chef.png";
 import assemblyShot from "../assets/projects/assembly-endgame.png";
 import tenziesShot from "../assets/projects/tenzies.png";
@@ -42,6 +46,10 @@ const logos = [
   { src: javaIcon, alt: "Java" },
   { src: gitIcon, alt: "Git" },
   { src: githubIcon, alt: "GitHub" },
+  { src: nodeIcon, alt: "Node.js" },
+  { src: expressIcon, alt: "Express" },
+  { src: mongodbIcon, alt: "MongoDB" },
+  { src: wordpressIcon, alt: "WordPress" },
 ];
 
 const spiralItems = [
@@ -177,16 +185,20 @@ function ProjectCard({ project }: { project: Project }) {
       <p className="project__stack">{project.stack}</p>
       <h3>{project.name}</h3>
       <p className="project__summary">{project.summary}</p>
-      <div className="project__links">
-        <a href={project.repo} target="_blank" rel="noreferrer">
-          Code
-        </a>
-        {project.live ? (
-          <a href={project.live} target="_blank" rel="noreferrer">
-            Live
-          </a>
-        ) : null}
-      </div>
+      {project.repo || project.live ? (
+        <div className="project__links">
+          {project.repo ? (
+            <a href={project.repo} target="_blank" rel="noreferrer">
+              Code
+            </a>
+          ) : null}
+          {project.live ? (
+            <a href={project.live} target="_blank" rel="noreferrer">
+              Live
+            </a>
+          ) : null}
+        </div>
+      ) : null}
     </article>
   );
 }
@@ -297,11 +309,11 @@ function Site() {
           <section className="projects" id="projects">
             <div className="section-head">
               <p className="kicker">Projects</p>
-              <h2>Work from GitHub.</h2>
+              <h2>Selected work.</h2>
             </div>
             <div className="projects__grid">
               {projects.map((project) => (
-                <ProjectCard key={project.repo} project={project} />
+                <ProjectCard key={project.name} project={project} />
               ))}
             </div>
             <div className="earlier">
