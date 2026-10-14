@@ -202,7 +202,7 @@
 }
 
 .stack {
-  padding: 0.5rem 0 1.4rem;
+  padding: 0.5rem 0 3rem;
 }
 
 .logoloop__list,
@@ -227,7 +227,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  padding-bottom: 2.2rem;
+  padding-bottom: 3rem;
 }
 
 .about h2 {
@@ -262,7 +262,7 @@
 }
 
 .projects {
-  padding-bottom: 1.4rem;
+  padding-bottom: 3rem;
 }
 
 .section-head h2 {
@@ -358,7 +358,7 @@
 }
 
 .expertise {
-  padding-bottom: 1.6rem;
+  padding-bottom: 3rem;
 }
 
 .expertise__lead {

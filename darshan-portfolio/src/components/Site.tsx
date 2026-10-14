@@ -67,7 +67,7 @@ const nav = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
-  { href: "#stack", label: "Stack" },
+  { href: "#expertise", label: "Expertise" },
 ];
 
 function SocialIcon({ name }: { name: string }) {
@@ -216,7 +216,7 @@ function Expertise() {
   };
 
   return (
-    <section className="expertise" aria-label="Expertise">
+    <section className="expertise" aria-label="Expertise" id="expertise">
       <div className="section-head">
         <p className="kicker">Expertise</p>
         <h2>Command of the stack.</h2>
@@ -371,7 +371,7 @@ function Site() {
                       duration={1.3}
                       className="about__number"
                     />
-                    <span>years as an SDE</span>
+                    <span>years as an Software Developer</span>
                   </p>
                   <p>
                     <strong>{profile.degree}</strong>

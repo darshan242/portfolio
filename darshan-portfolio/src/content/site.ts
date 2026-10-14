@@ -60,6 +60,13 @@ export const projects: Project[] = [
     repo: "https://github.com/darshan242/virtual-mouse",
   },
   {
+    name: "Throughline",
+    summary:
+      "An MCP that stores decisions across sessions and uses that context to guide the next one.",
+    stack: "MCP",
+    repo: "https://github.com/darshan242/tokenizer-project",
+  },
+  {
     name: "Mind Manifestation Design",
     summary: "A WordPress website for a construction company.",
     stack: "WordPress",
@@ -80,12 +87,6 @@ export const projects: Project[] = [
     stack: "React, Vite",
     repo: "https://github.com/darshan242/tenzies-game",
     live: "https://tenzies-game-one-khaki.vercel.app",
-  },
-  {
-    name: "Throughline",
-    summary:
-      "An MCP that stores decisions across sessions and uses that context to guide the next one.",
-    stack: "MCP",
   },
 ];
 
