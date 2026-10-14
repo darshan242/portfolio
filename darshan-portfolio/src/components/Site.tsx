@@ -357,7 +357,7 @@ function Site() {
             <AnimatedContent distance={48} duration={0.7}>
               <div>
                 <p className="kicker">About</p>
-                <h2>Building React interfaces, in production.</h2>
+                <h2>Screens, APIs & The Data Between Them</h2>
               </div>
             </AnimatedContent>
             <AnimatedContent distance={48} duration={0.7} delay={0.08}>
@@ -371,7 +371,7 @@ function Site() {
                       duration={1.3}
                       className="about__number"
                     />
-                    <span>years as an Software Developer</span>
+                    <span>years as an Software Engineer</span>
                   </p>
                   <p>
                     <strong>{profile.degree}</strong>

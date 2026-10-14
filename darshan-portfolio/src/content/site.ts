@@ -4,34 +4,34 @@ export const profile = {
   role: "Full Stack Developer",
   eyebrow: "Hey, I’m a",
   summary:
-    "I build React interfaces. 2.3 years as an SDE, with a BE in Information Technology.",
+    "I build MERN products. React on the screen, Node and Express behind it, MongoDB for the data. 2.3 years as an Software Engineer.",
   years: 2.3,
   degree: "BE in Information Technology",
   /** Fill these in later. Empty values stay off the page. */
-  roleTitle: "",
-  company: "",
+  roleTitle: "Software Engineer",
+  company: "Mobisoft Infotech",
 };
 
 export const focus = [
   {
     number: "01",
-    title: "React interfaces",
+    title: "React Interfaces",
     text: "Components, state, and the screens people actually use.",
   },
   {
     number: "02",
-    title: "UI engineering",
-    text: "Layout, type, and interaction that stay consistent.",
+    title: "Node & Express",
+    text: "APIs that take a request and return something the UI can trust.",
   },
   {
     number: "03",
-    title: "Responsive layout",
-    text: "Interfaces that hold together from phone to desktop.",
+    title: "MongoDB",
+    text: "Data shaped for the product, not a pile of fields.",
   },
   {
     number: "04",
-    title: "Motion",
-    text: "Scroll and hover animation that stays readable.",
+    title: "The Full Path",
+    text: "A change on the screen that reaches the database and comes back clean.",
   },
 ];
 
