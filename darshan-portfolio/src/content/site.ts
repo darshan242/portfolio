@@ -53,8 +53,22 @@ export const projects: Project[] = [
     live: "https://claud-chef.vercel.app",
   },
   {
+    name: "Virtual Mouse (OpenCV)",
+    summary:
+      "A virtual mouse using OpenCV and MediaPipe for hand gesture recognition.",
+    stack: "Python, OpenCV, MediaPipe, PyAutoGUI, PyCaw",
+    repo: "https://github.com/darshan242/virtual-mouse",
+  },
+  {
+    name: "Mind Manifestation Design",
+    summary: "A WordPress website for a construction company.",
+    stack: "WordPress",
+    live: "https://mindmanifestation.co.in",
+  },
+  {
     name: "Assembly Endgame",
-    summary: "A word game. Guess the word within 8 attempts.",
+    summary:
+      "A word game. Guess the word within 8 attempts to save the assembly language from extinction.",
     stack: "React, Vite",
     repo: "https://github.com/darshan242/assembly-endgame",
     live: "https://assembly-endgame-five-gold.vercel.app",
@@ -100,6 +114,28 @@ export const earlierWork: Project[] = [
     stack: "Java",
     repo: "https://github.com/darshan242/CodeClause_Task1",
   },
+];
+
+export type Skill = {
+  name: string;
+  score: number;
+};
+
+/** Every score sits between 80 and 90. */
+export const skills: Skill[] = [
+  { name: "React", score: 90 },
+  { name: "JavaScript", score: 89 },
+  { name: "TypeScript", score: 86 },
+  { name: "HTML", score: 90 },
+  { name: "CSS", score: 88 },
+  { name: "Node.js", score: 85 },
+  { name: "Express", score: 83 },
+  { name: "MongoDB", score: 82 },
+  { name: "Python", score: 84 },
+  { name: "Java", score: 82 },
+  { name: "Git", score: 88 },
+  { name: "GitHub", score: 86 },
+  { name: "WordPress", score: 80 },
 ];
 
 export type Social = {

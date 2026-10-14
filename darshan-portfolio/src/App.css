@@ -138,7 +138,7 @@
 }
 
 .sheet {
-  overflow: hidden;
+  overflow: clip;
   border: 1px solid rgb(255 255 255 / 0.16);
   border-radius: 28px;
   background: rgb(14 8 6 / 0.34);
@@ -219,7 +219,7 @@
 .stack .kicker,
 .about,
 .projects,
-.spiral .section-head {
+.expertise .section-head {
   padding-inline: 1.4rem;
 }
 
@@ -357,12 +357,109 @@
   font-weight: 600;
 }
 
-.spiral {
-  padding-bottom: 1.2rem;
+.expertise {
+  padding-bottom: 1.6rem;
 }
 
-.spiral__stage {
-  height: 520px;
+.expertise__lead {
+  max-width: 36rem;
+  margin: 0.45rem 0 0;
+  color: #c8bfb6;
+  line-height: 1.5;
+}
+
+.expertise__layout {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 1.6rem 6rem;
+  align-items: start;
+  padding: 1.3rem 1.4rem 0.2rem;
+}
+
+.expertise__profile {
+  position: sticky;
+  top: 6rem;
+}
+
+.expertise .profile-card__photo {
+  object-position: 50% 34%;
+}
+
+.expertise .profile-card__avatar img {
+  object-position: 50% 28%;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+  margin: 0;
+  padding: 0.15rem 0 0;
+  list-style: none;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "icon name score"
+    "icon bar bar";
+  column-gap: 0.75rem;
+  row-gap: 0.4rem;
+  align-items: center;
+}
+
+.skill__icon {
+  grid-area: icon;
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+}
+
+.skill__name {
+  grid-area: name;
+  color: #f6f1ea;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.skill__score {
+  grid-area: score;
+  color: #ff5a1f;
+  font-family: Syne, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+}
+
+.skill__track {
+  grid-area: bar;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.12);
+}
+
+.skill__fill {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ffb088, #ff5a1f);
+  transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--delay, 0ms);
+}
+
+.skills--in .skill__fill {
+  width: var(--skill);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill__fill {
+    width: var(--skill);
+    transition: none;
+  }
 }
 
 .contact {
@@ -468,7 +565,15 @@
     justify-content: flex-start;
   }
 
-  .spiral__stage {
-    height: 420px;
+  .expertise__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise__profile {
+    position: static;
+  }
+
+  .expertise .profile-card {
+    margin-inline: auto;
   }
 }

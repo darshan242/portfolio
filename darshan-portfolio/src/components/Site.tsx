@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import reactIcon from "../assets/stack/react.png";
 import javascriptIcon from "../assets/stack/javascript.png";
 import typescriptIcon from "../assets/stack/typescript.png";
@@ -11,25 +12,20 @@ import nodeIcon from "../assets/stack/node.png";
 import mongodbIcon from "../assets/stack/mongodb.png";
 import expressIcon from "../assets/stack/express.png";
 import wordpressIcon from "../assets/stack/wordpress.png";
-import chefShot from "../assets/projects/claud-chef.png";
-import assemblyShot from "../assets/projects/assembly-endgame.png";
-import tenziesShot from "../assets/projects/tenzies.png";
-import frameStart from "../assets/frames/ezgif-frame-001.png";
-import frameMid from "../assets/frames/ezgif-frame-070.png";
-import frameLate from "../assets/frames/ezgif-frame-110.png";
+import portraitFrame from "../assets/frames/ezgif-frame-001.png";
 import AnimatedContent from "./bits/AnimatedContent";
 import CountUp from "./bits/CountUp";
 import FoldText from "./bits/FoldText";
 import GradientText from "./bits/GradientText";
-import InfiniteSpiral from "./bits/InfiniteSpiral";
 import LogoLoop from "./bits/LogoLoop";
 import Magnet from "./bits/Magnet";
-import WhenNear from "./WhenNear";
+import ProfileCard from "./bits/ProfileCard";
 import {
   earlierWork,
   focus,
   profile,
   projects,
+  skills,
   socials,
   type Project,
   type Social,
@@ -51,29 +47,21 @@ const logos = [
   { src: wordpressIcon, alt: "WordPress" },
 ];
 
-const spiralItems = [
-  {
-    src: chefShot,
-    alt: "RecipeGenie",
-    href: projects[0].live,
-    label: projects[0].name,
-  },
-  { src: frameStart, alt: "Portrait, opening frame", label: "Portrait" },
-  {
-    src: assemblyShot,
-    alt: "Assembly Endgame",
-    href: projects[1].live,
-    label: projects[1].name,
-  },
-  { src: frameMid, alt: "Portrait, middle frame", label: "Portrait" },
-  {
-    src: tenziesShot,
-    alt: "Tenzies",
-    href: projects[2].live,
-    label: projects[2].name,
-  },
-  { src: frameLate, alt: "Portrait, later frame", label: "Portrait" },
-];
+const skillIcons: Record<string, string> = {
+  React: reactIcon,
+  JavaScript: javascriptIcon,
+  TypeScript: typescriptIcon,
+  HTML: htmlIcon,
+  CSS: cssIcon,
+  Python: pythonIcon,
+  Java: javaIcon,
+  Git: gitIcon,
+  GitHub: githubIcon,
+  "Node.js": nodeIcon,
+  Express: expressIcon,
+  MongoDB: mongodbIcon,
+  WordPress: wordpressIcon,
+};
 
 const nav = [
   { href: "#home", label: "Home" },
@@ -199,6 +187,94 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       ) : null}
     </article>
+  );
+}
+
+function Expertise() {
+  const profileRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const node = profileRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        setActive(true);
+        observer.disconnect();
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  const openContact = () => {
+    window.open("https://wa.me/918767037115", "_blank");
+  };
+
+  return (
+    <section className="expertise" aria-label="Expertise">
+      <div className="section-head">
+        <p className="kicker">Expertise</p>
+        <h2>Command of the stack.</h2>
+        <p className="expertise__lead">
+          How comfortably I work in each tool I build with.
+        </p>
+      </div>
+      <div className="expertise__layout">
+        <div className="expertise__profile" ref={profileRef}>
+          <ProfileCard
+            avatarUrl={portraitFrame}
+            miniAvatarUrl={portraitFrame}
+            name={profile.fullName}
+            title={profile.role}
+            handle="darshan242"
+            status="Available"
+            statusColor="#ff5a1f"
+            contactText="Contact"
+            backdropColor="#1c0c08"
+            onContactClick={openContact}
+          />
+        </div>
+        <ul className={`skills${active ? " skills--in" : ""}`}>
+          {skills.map((skill, index) => {
+            const icon = skillIcons[skill.name];
+            return (
+              <li
+                key={skill.name}
+                className="skill"
+                style={
+                  {
+                    "--skill": `${skill.score}%`,
+                    "--delay": `${index * 70}ms`,
+                  } as CSSProperties
+                }
+              >
+                {icon ? (
+                  <img className="skill__icon" src={icon} alt="" />
+                ) : null}
+                <span className="skill__name">{skill.name}</span>
+                <span className="skill__score">{skill.score}%</span>
+                <div
+                  className="skill__track"
+                  role="meter"
+                  aria-label={skill.name}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={skill.score}
+                  aria-valuetext={`${skill.score} percent`}
+                >
+                  <span className="skill__fill" />
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
   );
 }
 
@@ -330,25 +406,7 @@ function Site() {
             </div>
           </section>
 
-          <section className="spiral" aria-label="Portrait spiral">
-            <div className="section-head">
-              <p className="kicker">Frames</p>
-              <h2>The portrait, in motion.</h2>
-            </div>
-            <WhenNear className="spiral__stage">
-              <InfiniteSpiral
-                items={spiralItems}
-                speed={0.4}
-                radius={190}
-                cardWidth={150}
-                cardHeight={210}
-                verticalSpacing={78}
-                cardsPerTurn={6}
-                cardRadius={16}
-                pauseOnHover
-              />
-            </WhenNear>
-          </section>
+          <Expertise />
 
           <section className="contact" id="contact">
             <div className="contact__copy">
