@@ -599,7 +599,8 @@
   }
 
   .hero {
-    min-height: 78dvh;
+    min-height: auto;
+    margin-top: 15rem;
     align-items: end;
   }
 
@@ -624,6 +625,18 @@
   }
 
   .expertise .profile-card {
+    margin-inline: auto;
+  }
+  .expertise__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .expertise__profile {
+    min-width: 0;
+  }
+
+  .expertise .profile-card {
+    width: 100%;
     margin-inline: auto;
   }
 }
